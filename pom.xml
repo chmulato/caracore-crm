@@ -6,7 +6,7 @@
     <artifactId>caracore-crm</artifactId>
     <name>Cara-Core CRM</name>
     <version>1.0</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
     <properties>
         <java.version>11</java.version>
@@ -84,6 +84,12 @@
         <dependency>
             <groupId>com.vaadin</groupId>
             <artifactId>vaadin-spring-boot-starter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
@@ -177,6 +183,7 @@
     </dependencies>
 
     <build>
+        <finalName>${artifactId}</finalName>
         <defaultGoal>spring-boot:run</defaultGoal>
         <plugins>
             <plugin>
@@ -215,7 +222,7 @@
             <!-- Production mode is activated using -Pproduction -->
             <id>production</id>
             <properties>
-                <vaadin.productionMode>false</vaadin.productionMode>
+                <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
             <build>
                 <plugins>
@@ -232,8 +239,8 @@
                             </execution>
                         </executions>
                         <configuration>
-                            <productionMode>false</productionMode>
-                            <pnpmEnable>false</pnpmEnable>
+                            <productionMode>true</productionMode>
+                            <pnpmEnable>true</pnpmEnable>
                         </configuration>
                     </plugin>
                 </plugins>
