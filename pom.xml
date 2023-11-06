@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.caracore.crm</groupId>
     <artifactId>caracore-crm</artifactId>
-    <name>Cara-Core CRM tutorial</name>
+    <name>Cara-Core CRM</name>
     <version>1.0</version>
     <packaging>jar</packaging>
 
