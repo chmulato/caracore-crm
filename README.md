@@ -4,12 +4,33 @@ Este repositório contém um exemplo de código desenvolvido com o Framework Spr
 
 *Demo:* https://www.caracore.com.br/crm
 
+
 ## Branches
 
-- O branch principal contém o código fonte da versão 23 do Vaadin.
-- O branch `v23` contém o código fonte do Vaadin 23.
+- O branch `main` contém o código fonte do Vaadin versão 23.
+- O branch `tomcat9_war` contém o código fonte configurado para o Tomcat 9 rodando com o Java 11.
 
 
-## Tutorial de exemplo
+## Tutorial de exemplo no site oficial do Vaadin
 Você pode encontrar uma versão em texto do tutorial na [Documentação Vaadin]
 (https://vaadin.com/docs/latest/flow/tutorials/in-depth-course).
+
+
+## Versão do Java JRE para o Tomcat
+49 = Java 5
+50 = Java 6
+51 = Java 7
+52 = Java 8
+53 = Java 9
+54 = Java 10
+55 = Java 11
+56 = Java 12
+57 = Java 13
+58 = Java 14
+59 = Java 15
+60 = Java 16
+61 = Java 17
+62 = Java 18
+63 = Java 19
+64 = Java 20
+65 = Java 21
