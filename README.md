@@ -2,9 +2,6 @@
 
 Este repositório contém um exemplo de código desenvolvido com o Framework Spring Boot para o back-end e o Framework Web Vaadin para o front-end. Foi utilizado o versão do Java 11, digo o Amazon Corretto JDK-11.
 
-*Demo:* https://www.caracore.com.br/crm
-
-
 ## Branches
 
 - O branch `main` contém o código fonte do Vaadin versão 23.
