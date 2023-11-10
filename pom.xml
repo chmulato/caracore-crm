@@ -80,6 +80,12 @@
             <groupId>com.vaadin</groupId>
             <!-- Replace artifactId with vaadin-core to use only free components -->
             <artifactId>vaadin</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>vaadin-dev</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -215,7 +221,7 @@
             <!-- Production mode is activated using -Pproduction -->
             <id>production</id>
             <properties>
-                <vaadin.productionMode>false</vaadin.productionMode>
+                <vaadin.productionMode>true</vaadin.productionMode>
             </properties>
             <build>
                 <plugins>
