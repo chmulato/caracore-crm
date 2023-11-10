@@ -120,7 +120,6 @@
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "lit": "2.6.1",
-    "lumo-css-framework": "^4.0.10",
     "proj4": "2.8.1"
   },
   "devDependencies": {
@@ -381,7 +380,6 @@
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
       "lit": "2.6.1",
-      "lumo-css-framework": "^4.0.10",
       "proj4": "2.8.1"
     },
     "devDependencies": {
@@ -400,6 +398,6 @@
       "workbox-core": "6.5.4",
       "workbox-precaching": "6.5.4"
     },
-    "hash": "23f65d2a676d0b2f2d0f51f4c496a0c5e21368972875ae94530a6aa00762a50f"
+    "hash": "41d6988190249277be5857a11d80b72307fce14c8994fb94386405baf816cb9e"
   }
 }

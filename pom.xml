@@ -80,6 +80,12 @@
             <groupId>com.vaadin</groupId>
             <!-- Replace artifactId with vaadin-core to use only free components -->
             <artifactId>vaadin</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.vaadin</groupId>
+                    <artifactId>vaadin-dev</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.vaadin</groupId>
@@ -127,6 +133,7 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.32</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
