@@ -8,7 +8,8 @@ Este repositório contém um exemplo de código desenvolvido com o Framework Spr
 - O branch `tomcat9_war` contém o código fonte configurado para o Tomcat 9 rodando com o Java 11.
 
 ## Demo
-A aplicação será acessada via browser do sistema operacional na url: http://caracore.com.br [Porta] : 6440/login
+A aplicação será acessada via browser do sistema operacional na url:
+[http] caracore.com.br [Porta] : 6440/login
 
 ## Tutorial de exemplo no site oficial do Vaadin
 Você pode encontrar uma versão em texto do tutorial na [Documentação Vaadin]
