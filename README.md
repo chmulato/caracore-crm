@@ -9,7 +9,7 @@ Este repositório contém um exemplo de código desenvolvido com o Framework Spr
 
 ## Demo Online 
 A aplicação pode ser acessada via browser do sistema operacional na url:
-[http] caracore.com.br [Porta] : 6440/login
+[http] crm.caracore.com.br
 
 ## Tutorial de exemplo no site oficial do Vaadin
 Você pode encontrar uma versão em texto do tutorial na [Documentação Vaadin]
