@@ -1,5 +1,7 @@
 package com.caracore.crm.views;
 
+import javax.annotation.security.PermitAll;
+
 import com.caracore.crm.data.service.CrmService;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.charts.Chart;
@@ -11,34 +13,33 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-import javax.annotation.security.PermitAll;
-
 @Route(value = "dashboard", layout = MainLayout.class)
 @PageTitle("Dashboard | Cara-Core CRM")
 @PermitAll
 public class DashboardView extends VerticalLayout {
-    private final CrmService service;
+	private static final long serialVersionUID = 1L;
+	private final CrmService service;
 
-    public DashboardView(CrmService service) {
-        this.service = service;
-        addClassName("dashboard-view");
-        setDefaultHorizontalComponentAlignment(Alignment.CENTER);
-        add(getContactStats(), getCompaniesChart());
-    }
+	public DashboardView(CrmService service) {
+		this.service = service;
+		addClassName("dashboard-view");
+		setDefaultHorizontalComponentAlignment(Alignment.CENTER);
+		add(getContactStats(), getCompaniesChart());
+	}
 
-    private Component getContactStats() {
-        Span stats = new Span(service.countContacts() + " contacts");
-        stats.addClassNames("text-xl", "mt-m");
-        return stats;
-    }
+	private Component getContactStats() {
+		Span stats = new Span(service.countContacts() + " contacts");
+		stats.addClassNames("text-xl", "mt-m");
+		return stats;
+	}
 
-    private Chart getCompaniesChart() {
-        Chart chart = new Chart(ChartType.PIE);
+	private Chart getCompaniesChart() {
+		Chart chart = new Chart(ChartType.PIE);
 
-        DataSeries dataSeries = new DataSeries();
-        service.findAllCompanies().forEach(company ->
-                dataSeries.add(new DataSeriesItem(company.getName(), service.getEmployeeCount(company.getId())))); // <5>
-        chart.getConfiguration().setSeries(dataSeries);
-        return chart;
-    }
+		DataSeries dataSeries = new DataSeries();
+		service.findAllCompanies()
+				.forEach(company -> dataSeries.add(new DataSeriesItem(company.getName(), company.getEmployeeCount())));
+		chart.getConfiguration().setSeries(dataSeries);
+		return chart;
+	}
 }
