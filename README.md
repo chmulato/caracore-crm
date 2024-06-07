@@ -1,6 +1,6 @@
 # Framework Spring Boot e Framework Web Vaadin
 
-Este repositório contém um exemplo de código desenvolvido em um treinamento com o Framework Spring Boot para o "back-end" da aplicação e o Framework Vaadin para o "front-end". Foi utilizado a versão do Java 11, Amazon Corretto OpenJDK-11.
+Este repositório contém um exemplo de código desenvolvido em um treinamento disponível online com o Framework Spring Boot para o "back-end" da aplicação e o Framework Vaadin para o "front-end". Foi utilizado a versão do Java 11, Amazon Corretto OpenJDK-11.
 
 
 ## Branches
@@ -9,8 +9,8 @@ Este repositório contém um exemplo de código desenvolvido em um treinamento c
 - O branch `tomcat9_war` contém o código fonte configurado para o Tomcat 9 rodando com o Java SDK 11.
 
 ## Demo Online 
-A aplicação pode ser acessada via browser do sistema operacional na url:
-[https://] crm.caracore.com.br
+A aplicação pode ser acessada online diretamente no site da própria mantenedora do framework, a empresa Vaadin, via browser do sistema operacional na url:
+[https://] crm.demo.vaadin.com/login.
 
 ## Tutorial de exemplo no site oficial do Vaadin
 Você pode encontrar uma versão do treinamento em texto do tutorial na [Documentação Vaadin]
