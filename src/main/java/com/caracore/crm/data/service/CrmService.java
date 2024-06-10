@@ -6,6 +6,7 @@ import com.caracore.crm.data.entity.Status;
 import com.caracore.crm.data.repository.CompanyRepository;
 import com.caracore.crm.data.repository.ContactRepository;
 import com.caracore.crm.data.repository.StatusRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,14 +50,10 @@ public class CrmService {
 	}
 
 	public List<Company> findAllCompanies() {
-		return companyRepository.findAllNative();
+		return companyRepository.findAll();
 	}
 
 	public List<Status> findAllStatuses() {
 		return statusRepository.findAll();
-	}
-
-	public  long getEmployeeCount(Long id) {
-		return companyRepository.getEmployeeCount(id);
 	}
 }

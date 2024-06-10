@@ -5,7 +5,6 @@ import com.caracore.crm.data.service.CrmService;
 import com.caracore.crm.views.MainLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
-import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -20,11 +19,12 @@ import javax.annotation.security.PermitAll;
 
 @Component
 @Scope("prototype")
-@Route(value="", layout = MainLayout.class)
+@Route(value = "", layout = MainLayout.class)
 @PageTitle("Contacts | Cara-Core CRM")
 @PermitAll
 public class ListView extends VerticalLayout {
-    Grid<Contact> grid = new Grid<>(Contact.class);
+	private static final long serialVersionUID = 1L;
+	Grid<Contact> grid = new Grid<>(Contact.class);
     TextField filterText = new TextField();
     ContactForm form;
     CrmService service;
@@ -34,26 +34,29 @@ public class ListView extends VerticalLayout {
         addClassName("list-view");
         setSizeFull();
         configureGrid();
+        configureForm();
 
-        form = new ContactForm(service.findAllCompanies(), service.findAllStatuses());
-        form.setWidth("25em");
-        form.addListener(ContactForm.SaveEvent.class, this::saveContact);
-        form.addListener(ContactForm.DeleteEvent.class, this::deleteContact);
-        form.addListener(ContactForm.CloseEvent.class, e -> closeEditor());
-
-        FlexLayout content = new FlexLayout(grid, form);
-        content.setFlexGrow(2, grid);
-        content.setFlexGrow(1, form);
-        content.setFlexShrink(0, form);
-        content.addClassNames("content", "gap-m");
-        content.setSizeFull();
-
-        add(getToolbar(), content);
+        add(getToolbar(), getContent());
         updateList();
         closeEditor();
-        grid.asSingleSelect().addValueChangeListener(event ->
-            editContact(event.getValue()));
     }
+
+    private HorizontalLayout getContent() {
+        HorizontalLayout content = new HorizontalLayout(grid, form);
+        content.setFlexGrow(2, grid);
+        content.setFlexGrow(1, form);
+        content.addClassNames("content");
+        content.setSizeFull();
+        return content;
+    }
+
+private void configureForm() {
+    form = new ContactForm(service.findAllCompanies(), service.findAllStatuses());
+    form.setWidth("25em");
+    form.addListener(ContactForm.SaveEvent.class, this::saveContact);
+    form.addListener(ContactForm.DeleteEvent.class, this::deleteContact);
+    form.addListener(ContactForm.CloseEvent.class, e -> closeEditor());
+}
 
     private void configureGrid() {
         grid.addClassNames("contact-grid");
@@ -62,6 +65,8 @@ public class ListView extends VerticalLayout {
         grid.addColumn(contact -> contact.getStatus().getName()).setHeader("Status");
         grid.addColumn(contact -> contact.getCompany().getName()).setHeader("Company");
         grid.getColumns().forEach(col -> col.setAutoWidth(true));
+        grid.asSingleSelect().addValueChangeListener(event ->
+            editContact(event.getValue()));
     }
 
     private HorizontalLayout getToolbar() {
@@ -100,7 +105,7 @@ public class ListView extends VerticalLayout {
         }
     }
 
-    void addContact() {
+    private void addContact() {
         grid.asSingleSelect().clear();
         editContact(new Contact());
     }
@@ -114,6 +119,4 @@ public class ListView extends VerticalLayout {
     private void updateList() {
         grid.setItems(service.findAllContacts(filterText.getValue()));
     }
-
-
 }
