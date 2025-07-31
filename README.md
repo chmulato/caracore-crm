@@ -40,7 +40,28 @@ Isso irá criar um container MySQL com as credenciais e banco já configurados p
    ```
 4. Acesse [http://localhost:8080](http://localhost:8080) no navegador.
 
+## Usuário e senha padrão
+
+Para acessar o sistema utilize:
+
+- **Usuário:** user
+- **Senha:** userpass
+
+Essas credenciais são válidas para o ambiente local e estão configuradas em memória (veja `SecurityConfig.java`).
+
+## Aviso de licença Vaadin
+
+Durante o desenvolvimento, pode aparecer um aviso no console do navegador como:
+
+```
+No license found when checking vaadin-chart
+```
+Esse aviso é gerado pelo Vaadin DevTools e pode ser ignorado em ambiente de desenvolvimento. Ele não impede o funcionamento do sistema.
+
 ## Versões do Java Runtime Environment (JRE) para Tomcat
+
+```bash
+|-------|-------------|
 | Valor | Versão Java |
 |-------|-------------|
 | 49    | Java 5      |
@@ -60,3 +81,5 @@ Isso irá criar um container MySQL com as credenciais e banco já configurados p
 | 63    | Java 19     |
 | 64    | Java 20     |
 | 65    | Java 21     |
+|-------|-------------|
+```
