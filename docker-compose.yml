@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: caracorecrm-db
+    restart: always
+    environment:
+      MYSQL_DATABASE: caracore_crm
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_USER: caracore_venda
+      MYSQL_PASSWORD: venda@123
+    ports:
+      - "3306:3306"
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
