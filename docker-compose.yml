@@ -16,5 +16,20 @@ services:
     volumes:
       - db_data:/var/lib/mysql
 
+  app:
+    build: .
+    container_name: caracorecrm-app
+    depends_on:
+      - db
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      MYSQL_USER: caracore_venda
+      MYSQL_PASSWORD: venda@123
+      demo.extra: "true"
+    ports:
+      - "8080:8080"
+    # Wait for db to accept connections before starting (simple retry loop)
+    entrypoint: ["/bin/sh","-c","/wait-for-it.sh db:3306 -- java -Dspring.profiles.active=docker -jar /app.jar"]
+
 volumes:
   db_data:
