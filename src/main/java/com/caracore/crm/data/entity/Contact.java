@@ -10,7 +10,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "contact", schema = "caracore_crm")
+@Table(name = "contact")
 public class Contact extends AbstractEntity {
 
     @NotEmpty

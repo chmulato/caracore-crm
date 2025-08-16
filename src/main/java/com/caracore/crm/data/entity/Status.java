@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "status", schema = "caracore_crm")
+@Table(name = "status")
 public class Status extends AbstractEntity {
     
 	private String name;

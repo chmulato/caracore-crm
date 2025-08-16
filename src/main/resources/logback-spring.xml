@@ -1,0 +1,17 @@
+<configuration>
+  <springProperty scope="context" name="LOG_PATH" source="LOG_PATH" defaultValue="logs"/>
+  <property name="PATTERN" value="%d{HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"/>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>${PATTERN}</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="org.hibernate.type.descriptor.sql" level="WARN"/>
+  <logger name="com.vaadin" level="INFO"/>
+
+  <root level="INFO">
+    <appender-ref ref="STDOUT"/>
+  </root>
+</configuration>

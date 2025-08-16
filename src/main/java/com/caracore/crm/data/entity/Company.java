@@ -11,7 +11,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Entity
-@Table(name = "company", schema = "caracore_crm")
+@Table(name = "company")
 public class Company extends AbstractEntity {
     
 	@NotBlank

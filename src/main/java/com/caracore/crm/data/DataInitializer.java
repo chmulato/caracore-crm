@@ -16,7 +16,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 @Component
-@Profile({"docker"})
+@Profile({"docker","local"})
 public class DataInitializer implements CommandLineRunner {
 
     private final CompanyRepository companyRepository;
